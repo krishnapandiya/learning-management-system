@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Catalog - EduPulse</title>
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="courses">
+
+    <!-- Global Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-accent">Edu</span>Pulse
+            </a>
+
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="courses.html" class="nav-link active">Courses</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="language.html" class="nav-link">Language</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-btn" aria-label="Shopping Cart">
+                    🛒 <span class="cart-badge" id="navCartCount">0</span>
+                </a>
+                <div class="auth-buttons" id="navAuth">
+                    <a href="login.html" class="btn btn-outline">Log In</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="courses-page-wrapper">
+        <div class="container">
+            
+            <!-- Search & Headline Header -->
+            <section class="catalog-header">
+                <div>
+                    <h1>Explore All Courses</h1>
+                    <p class="catalog-subtitle">Level up your abilities with industry-verified curriculums.</p>
+                </div>
+                
+                <!-- Search Box -->
+                <div class="search-bar-wrapper">
+                    <input type="text" id="courseSearchInput" class="form-control" placeholder="Search by title, topic, or keyword...">
+                    <button class="btn btn-primary" id="searchBtn">Search</button>
+                </div>
+            </section>
+
+            <!-- Filters & Sorting Controls -->
+            <section class="catalog-filter-bar">
+                <div class="category-filters" id="categoryFilters">
+                    <button class="filter-pill active" data-category="all">All Courses</button>
+                    <button class="filter-pill" data-category="development">Development</button>
+                    <button class="filter-pill" data-category="ai">Artificial Intelligence</button>
+                    <button class="filter-pill" data-category="design">Design & UI/UX</button>
+                    <button class="filter-pill" data-category="business">Business</button>
+                </div>
+
+                <div class="sort-selector">
+                    <label for="sortCourses">Sort by:</label>
+                    <select id="sortCourses" class="form-control form-control-sm">
+                        <option value="popular">Most Popular</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Dynamic Courses Grid (Populated & Filtered via app.js) -->
+            <section class="courses-grid" id="coursesGrid">
+                
+                <!-- Fallback/Default Course Card 1 -->
+                <div class="course-card" data-category="development">
+                    <div class="card-thumb">
+                        <span class="category-badge">Development</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-rating">★ 4.9 <span class="rating-count">(1,420)</span></div>
+                        <h3 class="card-title">Full-Stack Web Development Bootcamp</h3>
+                        <p class="card-instructor">Instructor: Alex Morgan</p>
+                        <div class="card-meta">
+                            <span>⏱️ 42 hrs</span>
+                            <span>📊 Beginner to Adv</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price-box">
+                                <span class="price-current">$49.99</span>
+                                <span class="price-old">$199.99</span>
+                            </div>
+                            <div class="card-btn-group">
+                                <a href="course-detail.html?id=1" class="btn btn-sm btn-outline">Details</a>
+                                <button class="btn btn-sm btn-primary add-to-cart-btn" data-id="1">Add Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fallback/Default Course Card 2 -->
+                <div class="course-card" data-category="ai">
+                    <div class="card-thumb ai-thumb">
+                        <span class="category-badge">AI & Data</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-rating">★ 4.8 <span class="rating-count">(980)</span></div>
+                        <h3 class="card-title">Machine Learning & Python Masterclass</h3>
+                        <p class="card-instructor">Instructor: Dr. Sarah Chen</p>
+                        <div class="card-meta">
+                            <span>⏱️ 36 hrs</span>
+                            <span>📊 Intermediate</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price-box">
+                                <span class="price-current">$54.99</span>
+                                <span class="price-old">$189.99</span>
+                            </div>
+                            <div class="card-btn-group">
+                                <a href="course-detail.html?id=2" class="btn btn-sm btn-outline">Details</a>
+                                <button class="btn btn-sm btn-primary add-to-cart-btn" data-id="2">Add Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fallback/Default Course Card 3 -->
+                <div class="course-card" data-category="design">
+                    <div class="card-thumb design-thumb">
+                        <span class="category-badge">Design</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-rating">★ 4.7 <span class="rating-count">(720)</span></div>
+                        <h3 class="card-title">UI/UX Design Systems & Figma Pro</h3>
+                        <p class="card-instructor">Instructor: Marcus Vance</p>
+                        <div class="card-meta">
+                            <span>⏱️ 28 hrs</span>
+                            <span>📊 All Levels</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price-box">
+                                <span class="price-current">$39.99</span>
+                                <span class="price-old">$149.99</span>
+                            </div>
+                            <div class="card-btn-group">
+                                <a href="course-detail.html?id=3" class="btn btn-sm btn-outline">Details</a>
+                                <button class="btn btn-sm btn-primary add-to-cart-btn" data-id="3">Add Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- No Results Found State -->
+            <div class="empty-state-card" id="noCoursesState" style="display: none;">
+                <div class="empty-state-icon">🔍</div>
+                <h3>No courses matched your query</h3>
+                <p>Try searching with another keyword or reset the category filter.</p>
+                <button class="btn btn-outline" id="resetFiltersBtn">Reset Filters</button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 EduPulse LMS. Built for learning.</p>
+            <div class="footer-links">
+                <a href="courses.html">Courses</a>
+                <a href="language.html">Language Settings</a>
+                <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Script -->
+    <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - EduPulse</title>
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="register">
+
+    <!-- Global Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-accent">Edu</span>Pulse
+            </a>
+
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="language.html" class="nav-link">Language</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-btn" aria-label="Shopping Cart">
+                    🛒 <span class="cart-badge" id="navCartCount">0</span>
+                </a>
+                <div class="auth-buttons" id="navAuth">
+                    <a href="login.html" class="btn btn-outline">Log In</a>
+                    <a href="register.html" class="btn btn-primary active">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-page-wrapper">
+        <div class="container container-xs">
+            <div class="auth-card">
+                
+                <div class="auth-header text-center">
+                    <h2>Create Your Account</h2>
+                    <p>Join thousands of learners building skills for tomorrow.</p>
+                </div>
+
+                <!-- Feedback / Status Alerts -->
+                <div class="alert alert-danger" id="registerAlert" style="display: none;"></div>
+                <div class="alert alert-success" id="registerSuccess" style="display: none;">
+                    Account created successfully! Redirecting to login...
+                </div>
+
+                <form id="registerForm" novalidate>
+                    <!-- Full Name Field -->
+                    <div class="form-group">
+                        <label for="regFullName">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="regFullName" 
+                            class="form-control" 
+                            placeholder="John Doe" 
+                            required 
+                            autocomplete="name"
+                        >
+                        <small class="field-error" id="nameError"></small>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="regEmail">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="regEmail" 
+                            class="form-control" 
+                            placeholder="name@example.com" 
+                            required 
+                            autocomplete="email"
+                        >
+                        <small class="field-error" id="regEmailError"></small>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <div class="password-input-group">
+                            <input 
+                                type="password" 
+                                id="regPassword" 
+                                class="form-control" 
+                                placeholder="At least 6 characters" 
+                                required 
+                                autocomplete="new-password"
+                            >
+                            <button type="button" class="password-toggle-btn" id="toggleRegPasswordBtn" aria-label="Toggle password visibility">
+                                👁️
+                            </button>
+                        </div>
+                        
+                        <!-- Password Strength Indicator -->
+                        <div class="password-strength-bar">
+                            <div class="strength-fill" id="strengthMeter"></div>
+                        </div>
+                        <span class="strength-text" id="strengthText">Strength: Too short</span>
+                        <small class="field-error" id="regPasswordError"></small>
+                    </div>
+
+                    <!-- Confirm Password Field -->
+                    <div class="form-group">
+                        <label for="regConfirmPassword">Confirm Password</label>
+                        <input 
+                            type="password" 
+                            id="regConfirmPassword" 
+                            class="form-control" 
+                            placeholder="Re-enter your password" 
+                            required 
+                            autocomplete="new-password"
+                        >
+                        <small class="field-error" id="confirmPasswordError"></small>
+                    </div>
+
+                    <!-- Terms and Conditions Checkbox -->
+                    <div class="form-checkbox-row">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="acceptTerms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="terms-link">Terms of Service</a> &amp; <a href="#" class="terms-link">Privacy Policy</a>
+                        </label>
+                        <small class="field-error" id="termsError"></small>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-block btn-lg" id="registerSubmitBtn">
+                        Create Account
+                    </button>
+                </form>
+
+                <!-- Social Sign Up Divider -->
+                <div class="auth-divider">
+                    <span>or register with</span>
+                </div>
+
+                <div class="social-auth-grid">
+                    <button type="button" class="btn btn-outline btn-block social-btn" id="googleRegBtn">
+                        <span class="social-icon">🌐</span> Google
+                    </button>
+                    <button type="button" class="btn btn-outline btn-block social-btn" id="githubRegBtn">
+                        <span class="social-icon">🐙</span> GitHub
+                    </button>
+                </div>
+
+                <!-- Redirect to Login -->
+                <div class="auth-footer text-center">
+                    <p>Already have an account? <a href="login.html" class="auth-link">Log in here</a></p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 EduPulse LMS. Built for learning.</p>
+            <div class="footer-links">
+                <a href="courses.html">Courses</a>
+                <a href="language.html">Language Settings</a>
+                <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Script -->
+    <script src="../js/app.js"></script>
+</body>
+</html>

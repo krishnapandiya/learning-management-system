@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPulse - Online Learning Platform</title>
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts for clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="home">
+
+    <!-- Global Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">Edu</span>Pulse
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="pages/courses.html" class="nav-link">Courses</a>
+                <a href="pages/dashboard.html" class="nav-link">Dashboard</a>
+                <a href="pages/language.html" class="nav-link">Language</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="pages/cart.html" class="cart-btn" aria-label="Shopping Cart">
+                    🛒 <span class="cart-badge" id="navCartCount">0</span>
+                </a>
+                <!-- Auth status is dynamically updated via app.js -->
+                <div class="auth-buttons" id="navAuth">
+                    <a href="pages/login.html" class="btn btn-outline">Log In</a>
+                    <a href="pages/register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge">Start Learning Today</span>
+                    <h1 class="hero-title">Master In-Demand Skills with Industry Mentors</h1>
+                    <p class="hero-description">
+                        Explore hands-on courses in programming, design, data science, and AI. Build portfolio projects and get certified.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="pages/courses.html" class="btn btn-primary btn-lg">Browse All Courses</a>
+                        <a href="pages/register.html" class="btn btn-secondary btn-lg">Get Started Free</a>
+                    </div>
+                </div>
+                <div class="hero-card-preview">
+                    <div class="preview-card">
+                        <div class="preview-header">
+                            <span class="tag">Trending Course</span>
+                            <span class="rating">★ 4.9 (1.2k)</span>
+                        </div>
+                        <h3>Full-Stack Web Development Bootcamp</h3>
+                        <p>Learn HTML, CSS, JavaScript, React, and Node.js from scratch.</p>
+                        <div class="preview-footer">
+                            <span class="price">$49.99</span>
+                            <a href="pages/course-detail.html?id=1" class="btn btn-sm btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="stats-section">
+            <div class="container stats-grid">
+                <div class="stat-box">
+                    <h3 class="stat-number">50+</h3>
+                    <p class="stat-label">Curated Courses</p>
+                </div>
+                <div class="stat-box">
+                    <h3 class="stat-number">12k+</h3>
+                    <p class="stat-label">Active Learners</p>
+                </div>
+                <div class="stat-box">
+                    <h3 class="stat-number">95%</h3>
+                    <p class="stat-label">Completion Rate</p>
+                </div>
+                <div class="stat-box">
+                    <h3 class="stat-number">24/7</h3>
+                    <p class="stat-label">Community Support</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories Preview -->
+        <section class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Popular Domains</h2>
+                    <p>Select a learning track that fits your career goals</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <span class="category-icon">💻</span>
+                        <h4>Web & App Development</h4>
+                        <p>Frontend, backend, APIs, and modern frameworks.</p>
+                        <a href="pages/courses.html?category=development" class="link-arrow">Explore Track &rarr;</a>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🤖</span>
+                        <h4>Artificial Intelligence</h4>
+                        <p>Machine learning fundamentals, LLMs, and prompt design.</p>
+                        <a href="pages/courses.html?category=ai" class="link-arrow">Explore Track &rarr;</a>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🎨</span>
+                        <h4>UI/UX & Visual Design</h4>
+                        <p>Wireframing, design systems, and responsive layouts.</p>
+                        <a href="pages/courses.html?category=design" class="link-arrow">Explore Track &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 EduPulse LMS. Built for learning.</p>
+            <div class="footer-links">
+                <a href="pages/courses.html">Courses</a>
+                <a href="pages/language.html">Language Settings</a>
+                <a href="pages/login.html">Sign In</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>

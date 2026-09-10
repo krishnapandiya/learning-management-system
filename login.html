@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - EduPulse</title>
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="login">
+
+    <!-- Global Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-accent">Edu</span>Pulse
+            </a>
+
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="language.html" class="nav-link">Language</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-btn" aria-label="Shopping Cart">
+                    🛒 <span class="cart-badge" id="navCartCount">0</span>
+                </a>
+                <div class="auth-buttons" id="navAuth">
+                    <a href="login.html" class="btn btn-outline active">Log In</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-page-wrapper">
+        <div class="container container-xs">
+            <div class="auth-card">
+                
+                <div class="auth-header text-center">
+                    <h2>Welcome Back</h2>
+                    <p>Log in to access your enrolled courses and track your progress.</p>
+                </div>
+
+                <!-- Feedback / Error Message Box -->
+                <div class="alert alert-danger" id="loginAlert" style="display: none;">
+                    Invalid email or password. Please check your credentials.
+                </div>
+
+                <form id="loginForm" novalidate>
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="loginEmail" 
+                            class="form-control" 
+                            placeholder="name@example.com" 
+                            required 
+                            autocomplete="email"
+                        >
+                        <small class="field-error" id="emailError"></small>
+                    </div>
+
+                    <!-- Password Field with Visibility Toggle -->
+                    <div class="form-group">
+                        <div class="label-row">
+                            <label for="loginPassword">Password</label>
+                            <a href="#" class="forgot-link" id="forgotPasswordLink">Forgot?</a>
+                        </div>
+                        <div class="password-input-group">
+                            <input 
+                                type="password" 
+                                id="loginPassword" 
+                                class="form-control" 
+                                placeholder="Enter your password" 
+                                required 
+                                autocomplete="current-password"
+                            >
+                            <button type="button" class="password-toggle-btn" id="togglePasswordBtn" aria-label="Toggle password visibility">
+                                👁️
+                            </button>
+                        </div>
+                        <small class="field-error" id="passwordError"></small>
+                    </div>
+
+                    <!-- Options Row -->
+                    <div class="form-checkbox-row">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkmark"></span>
+                            Remember me on this device
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-block btn-lg" id="loginSubmitBtn">
+                        Log In
+                    </button>
+                </form>
+
+                <!-- Social Login Divider -->
+                <div class="auth-divider">
+                    <span>or continue with</span>
+                </div>
+
+                <div class="social-auth-grid">
+                    <button type="button" class="btn btn-outline btn-block social-btn" id="googleLoginBtn">
+                        <span class="social-icon">🌐</span> Google
+                    </button>
+                    <button type="button" class="btn btn-outline btn-block social-btn" id="githubLoginBtn">
+                        <span class="social-icon">🐙</span> GitHub
+                    </button>
+                </div>
+
+                <!-- Redirect to Registration -->
+                <div class="auth-footer text-center">
+                    <p>Don't have an account? <a href="register.html" class="auth-link">Sign up free</a></p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 EduPulse LMS. Built for learning.</p>
+            <div class="footer-links">
+                <a href="courses.html">Courses</a>
+                <a href="language.html">Language Settings</a>
+                <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Script -->
+    <script src="../js/app.js"></script>
+</body>
+</html>

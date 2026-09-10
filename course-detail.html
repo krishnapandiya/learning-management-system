@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - EduPulse</title>
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="course-detail">
+
+    <!-- Global Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-accent">Edu</span>Pulse
+            </a>
+
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="courses.html" class="nav-link active">Courses</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="language.html" class="nav-link">Language</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-btn" aria-label="Shopping Cart">
+                    🛒 <span class="cart-badge" id="navCartCount">0</span>
+                </a>
+                <div class="auth-buttons" id="navAuth">
+                    <a href="login.html" class="btn btn-outline">Log In</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Course Overview Header -->
+    <section class="course-hero">
+        <div class="container course-hero-grid">
+            <div class="course-hero-content">
+                <div class="course-breadcrumbs">
+                    <a href="courses.html">Courses</a> &gt; <span id="breadcrumbCategory">Development</span>
+                </div>
+                <h1 id="detailTitle">Full-Stack Web Development Bootcamp</h1>
+                <p class="course-tagline" id="detailTagline">Master modern frontend and backend development with hands-on projects, REST APIs, and database architecture.</p>
+                
+                <div class="course-meta-pills">
+                    <span class="pill rating-pill">★ <strong id="detailRating">4.9</strong> (<span id="detailReviewsCount">1,420</span> ratings)</span>
+                    <span class="pill">👥 <span id="detailStudentsCount">8,500</span> Students</span>
+                    <span class="pill">⏱️ <span id="detailDuration">42 Hours</span></span>
+                    <span class="pill">🌐 <span id="detailLanguage">English</span></span>
+                </div>
+
+                <div class="course-instructor-inline">
+                    <span>Created by <strong id="detailInstructor">Alex Morgan</strong></span>
+                    <span class="bullet">•</span>
+                    <span>Last updated <strong id="detailUpdated">August 2026</strong></span>
+                </div>
+            </div>
+
+            <!-- Purchase / Action Card (Sticky) -->
+            <aside class="course-purchase-sidebar">
+                <div class="card purchase-card">
+                    <div class="card-video-preview">
+                        <div class="play-overlay-trigger" id="previewVideoBtn">
+                            <span class="play-icon">▶</span>
+                            <span>Preview Course</span>
+                        </div>
+                    </div>
+
+                    <div class="purchase-body">
+                        <div class="price-row">
+                            <span class="detail-price" id="detailPrice">$49.99</span>
+                            <span class="detail-original-price" id="detailOriginalPrice">$199.99</span>
+                            <span class="discount-badge">75% OFF</span>
+                        </div>
+
+                        <div class="cta-stack">
+                            <button class="btn btn-primary btn-block btn-lg" id="addToCartBtn">Add to Cart</button>
+                            <button class="btn btn-outline btn-block" id="buyNowBtn">Buy Now</button>
+                        </div>
+
+                        <ul class="perks-checklist">
+                            <li>✓ Full lifetime access</li>
+                            <li>✓ Access on mobile and desktop</li>
+                            <li>✓ Certificate of completion</li>
+                            <li>✓ Interactive quizzes & exercises</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Detailed Syllabus & Description Content -->
+    <main class="course-detail-main">
+        <div class="container course-main-layout">
+            <div class="course-content-column">
+                
+                <!-- What You'll Learn -->
+                <section class="detail-block what-you-learn-card">
+                    <h3>What You'll Learn</h3>
+                    <ul class="learning-grid" id="learningObjectivesList">
+                        <li>Build responsive websites using semantic HTML5 and modern CSS3</li>
+                        <li>Master modern JavaScript (ES6+), async/await, and DOM manipulation</li>
+                        <li>Implement user authentication, sessions, and secure web storage</li>
+                        <li>Design scalable relational databases and integrate external APIs</li>
+                    </ul>
+                </section>
+
+                <!-- Curriculum / Syllabus Accordion -->
+                <section class="detail-block">
+                    <h3>Course Curriculum</h3>
+                    <p class="text-muted"><span id="totalModulesCount">5</span> Modules • <span id="totalLessonsCount">38</span> Lessons</p>
+
+                    <div class="accordion" id="curriculumAccordion">
+                        
+                        <!-- Module 1 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span>Module 1: Foundations of the Modern Web</span>
+                                <span class="accordion-indicator">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <ul class="lesson-list">
+                                    <li><span>📄 Introduction to Semantic HTML</span> <span class="time">15m</span></li>
+                                    <li><span>📄 CSS Flexbox & CSS Grid Deep Dive</span> <span class="time">45m</span></li>
+                                    <li><span>📄 Mobile-First Responsive Layouts</span> <span class="time">30m</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Module 2 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span>Module 2: JavaScript Mastery</span>
+                                <span class="accordion-indicator">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <ul class="lesson-list">
+                                    <li><span>📄 Core Syntax, Scoping & Closures</span> <span class="time">50m</span></li>
+                                    <li><span>📄 DOM Traversal & Interactive Events</span> <span class="time">40m</span></li>
+                                    <li><span>📄 Fetch API & Asynchronous JavaScript</span> <span class="time">60m</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Module 3 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span>Module 3: Full-Stack Project Building</span>
+                                <span class="accordion-indicator">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <ul class="lesson-list">
+                                    <li><span>📄 Setting Up Client-Side State Architecture</span> <span class="time">35m</span></li>
+                                    <li><span>📄 Building the Checkout & Quiz Flow</span> <span class="time">55m</span></li>
+                                    <li><span>📄 Final Capstone Project Delivery</span> <span class="time">90m</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Instructor Profile -->
+                <section class="detail-block instructor-section">
+                    <h3>Meet Your Instructor</h3>
+                    <div class="instructor-card">
+                        <div class="instructor-avatar" id="instructorAvatar">AM</div>
+                        <div class="instructor-info">
+                            <h4 id="instructorName">Alex Morgan</h4>
+                            <p class="instructor-role" id="instructorTitle">Senior Full-Stack Architect & Tech Educator</p>
+                            <p class="instructor-bio" id="instructorBio">
+                                Over 10 years of building web applications for Fortune 500 companies and teaching over 100,000 developers worldwide.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 EduPulse LMS. Built for learning.</p>
+            <div class="footer-links">
+                <a href="courses.html">Courses</a>
+                <a href="language.html">Language Settings</a>
+                <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Script -->
+    <script src="../js/app.js"></script>
+</body>
+</html>

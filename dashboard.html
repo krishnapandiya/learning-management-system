@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learner Dashboard - EduPulse</title>
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="dashboard">
+
+    <!-- Global Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-accent">Edu</span>Pulse
+            </a>
+
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="language.html" class="nav-link">Language</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-btn" aria-label="Shopping Cart">
+                    🛒 <span class="cart-badge" id="navCartCount">0</span>
+                </a>
+                <div class="auth-buttons" id="navAuth">
+                    <a href="login.html" class="btn btn-outline">Log In</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-wrapper">
+        <div class="container">
+            
+            <!-- Dashboard Welcome Header -->
+            <section class="dashboard-header">
+                <div class="user-greeting">
+                    <div class="avatar-circle" id="userAvatar">U</div>
+                    <div>
+                        <h1 class="dashboard-title">Welcome back, <span id="userNameDisplay">Learner</span>!</h1>
+                        <p class="dashboard-subtitle">Keep the momentum going. You're making steady progress.</p>
+                    </div>
+                </div>
+                <div class="dashboard-quick-actions">
+                    <a href="courses.html" class="btn btn-primary">+ Explore Courses</a>
+                </div>
+            </section>
+
+            <!-- Learning Summary Metric Cards -->
+            <section class="dashboard-metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-icon">📚</span>
+                    <div>
+                        <h3 class="metric-value" id="enrolledCount">3</h3>
+                        <p class="metric-label">Enrolled Courses</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-icon">⏳</span>
+                    <div>
+                        <h3 class="metric-value" id="hoursLearned">24.5</h3>
+                        <p class="metric-label">Hours Learned</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-icon">🏆</span>
+                    <div>
+                        <h3 class="metric-value" id="completedCount">1</h3>
+                        <p class="metric-label">Certificates Earned</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-icon">🎯</span>
+                    <div>
+                        <h3 class="metric-value" id="avgQuizScore">88%</h3>
+                        <p class="metric-label">Average Quiz Score</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Active Enrolled Courses Section -->
+            <section class="dashboard-section">
+                <div class="section-title-row">
+                    <h2>In-Progress Courses</h2>
+                    <span class="tag-counter" id="activeCoursesCount">2 Active</span>
+                </div>
+
+                <!-- Course Cards Container (Populated via JS or Default Static Content) -->
+                <div class="enrolled-courses-grid" id="enrolledCoursesList">
+                    
+                    <!-- Card 1 -->
+                    <div class="enrolled-course-card">
+                        <div class="enrolled-card-header">
+                            <span class="category-tag">Web Development</span>
+                            <span class="badge">In Progress</span>
+                        </div>
+                        <h3 class="enrolled-card-title">Full-Stack Web Development Bootcamp</h3>
+                        <p class="enrolled-card-instructor">Instructor: Alex Morgan</p>
+                        
+                        <div class="enrolled-progress-wrapper">
+                            <div class="progress-info">
+                                <span>Progress</span>
+                                <span class="progress-percent">65%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" style="width: 65%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="enrolled-card-footer">
+                            <a href="course-detail.html?id=1" class="btn btn-outline btn-sm">Review Syllabus</a>
+                            <a href="quiz.html?courseId=1" class="btn btn-primary btn-sm">Take Quiz</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="enrolled-course-card">
+                        <div class="enrolled-card-header">
+                            <span class="category-tag">Artificial Intelligence</span>
+                            <span class="badge">In Progress</span>
+                        </div>
+                        <h3 class="enrolled-card-title">Introduction to Machine Learning & Python</h3>
+                        <p class="enrolled-card-instructor">Instructor: Dr. Sarah Chen</p>
+                        
+                        <div class="enrolled-progress-wrapper">
+                            <div class="progress-info">
+                                <span>Progress</span>
+                                <span class="progress-percent">30%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" style="width: 30%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="enrolled-card-footer">
+                            <a href="course-detail.html?id=2" class="btn btn-outline btn-sm">Review Syllabus</a>
+                            <a href="quiz.html?courseId=2" class="btn btn-primary btn-sm">Take Quiz</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Completed Certifications Section -->
+            <section class="dashboard-section">
+                <div class="section-title-row">
+                    <h2>Completed Certifications</h2>
+                </div>
+
+                <div class="certificates-grid" id="certificatesList">
+                    <div class="certificate-item-card">
+                        <div class="cert-icon">🎖️</div>
+                        <div class="cert-meta">
+                            <h4>UI/UX Design Essentials</h4>
+                            <p class="cert-date">Completed on: Aug 14, 2026</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm" onclick="window.print()">Print Certificate</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 EduPulse LMS. Built for learning.</p>
+            <div class="footer-links">
+                <a href="courses.html">Courses</a>
+                <a href="language.html">Language Settings</a>
+                <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Script -->
+    <script src="../js/app.js"></script>
+</body>
+</html>

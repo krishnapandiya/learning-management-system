@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout - EduPulse</title>
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="checkout">
+
+    <!-- Global Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-accent">Edu</span>Pulse
+            </a>
+
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="language.html" class="nav-link">Language</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-btn" aria-label="Shopping Cart">
+                    🛒 <span class="cart-badge" id="navCartCount">0</span>
+                </a>
+                <div class="auth-buttons" id="navAuth">
+                    <a href="login.html" class="btn btn-outline">Log In</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-wrapper">
+        <div class="container">
+            <div class="page-title-group">
+                <h1>Secure Checkout</h1>
+                <p>Complete your enrollment and get immediate lifetime access.</p>
+            </div>
+
+            <div class="checkout-layout">
+                
+                <!-- Left Column: Billing & Payment Information -->
+                <section class="checkout-form-container">
+                    <form id="checkoutForm" onsubmit="return false;">
+                        
+                        <!-- Billing Details -->
+                        <div class="form-box">
+                            <h3>1. Billing Information</h3>
+                            <div class="form-grid-2">
+                                <div class="form-group">
+                                    <label for="billingName">Full Name</label>
+                                    <input type="text" id="billingName" class="form-control" placeholder="Jane Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="billingEmail">Email Address (for receipts)</label>
+                                    <input type="email" id="billingEmail" class="form-control" placeholder="jane@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-grid-2">
+                                <div class="form-group">
+                                    <label for="billingCountry">Country / Region</label>
+                                    <select id="billingCountry" class="form-control" required>
+                                        <option value="IN">India</option>
+                                        <option value="US">United States</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="AU">Australia</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="billingZip">Postal / Zip Code</label>
+                                    <input type="text" id="billingZip" class="form-control" placeholder="500001" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Methods -->
+                        <div class="form-box">
+                            <h3>2. Payment Method</h3>
+                            
+                            <!-- Payment Option Selector Tabs -->
+                            <div class="payment-tabs">
+                                <label class="payment-tab active">
+                                    <input type="radio" name="paymentMethod" value="card" checked>
+                                    <span>💳 Credit / Debit Card</span>
+                                </label>
+                                <label class="payment-tab">
+                                    <input type="radio" name="paymentMethod" value="upi">
+                                    <span>📱 UPI / QR</span>
+                                </label>
+                                <label class="payment-tab">
+                                    <input type="radio" name="paymentMethod" value="netbanking">
+                                    <span>🏦 Net Banking</span>
+                                </label>
+                            </div>
+
+                            <!-- Card Details Sub-panel -->
+                            <div class="payment-panel" id="cardPanel">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" id="cardNumber" class="form-control" placeholder="4111 2222 3333 4444" maxlength="19">
+                                </div>
+                                <div class="form-grid-2">
+                                    <div class="form-group">
+                                        <label for="cardExpiry">Expiration (MM/YY)</label>
+                                        <input type="text" id="cardExpiry" class="form-control" placeholder="12/28" maxlength="5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cardCvv">CVV / CVC</label>
+                                        <input type="password" id="cardCvv" class="form-control" placeholder="123" maxlength="4">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- UPI Sub-panel (hidden by default) -->
+                            <div class="payment-panel" id="upiPanel" style="display: none;">
+                                <div class="form-group">
+                                    <label for="upiId">Virtual Payment Address (VPA / UPI ID)</label>
+                                    <input type="text" id="upiId" class="form-control" placeholder="username@upi">
+                                </div>
+                                <p class="text-muted"><small>Or scan the QR code that will be displayed on the next prompt.</small></p>
+                            </div>
+
+                            <!-- Net Banking Sub-panel (hidden by default) -->
+                            <div class="payment-panel" id="netbankingPanel" style="display: none;">
+                                <div class="form-group">
+                                    <label for="bankSelect">Select Your Bank</label>
+                                    <select id="bankSelect" class="form-control">
+                                        <option value="sbi">State Bank of India</option>
+                                        <option value="hdfc">HDFC Bank</option>
+                                        <option value="icici">ICICI Bank</option>
+                                        <option value="axis">Axis Bank</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block btn-lg" id="payNowBtn">
+                                Complete Payment (<span id="payAmountDisplay">$0.00</span>)
+                            </button>
+                            <p class="security-guarantee">🔒 256-Bit SSL Encrypted & Secure Checkout</p>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Right Column: Order Summary Sidebar -->
+                <aside class="checkout-summary-sidebar">
+                    <div class="summary-card">
+                        <h3>Order Summary</h3>
+                        
+                        <!-- Dynamic items list populated via app.js -->
+                        <div class="checkout-items-list" id="checkoutItemsList">
+                            <!-- Injected by app.js from localStorage -->
+                        </div>
+
+                        <hr class="summary-divider">
+
+                        <div class="summary-line">
+                            <span>Subtotal</span>
+                            <span id="checkoutSubtotal">$0.00</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Discount</span>
+                            <span class="discount-text" id="checkoutDiscount">-$0.00</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Taxes / GST</span>
+                            <span id="checkoutTax">$0.00</span>
+                        </div>
+
+                        <hr class="summary-divider">
+
+                        <div class="summary-line total-line">
+                            <strong>Total Amount</strong>
+                            <strong class="total-price" id="checkoutGrandTotal">$0.00</strong>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Payment Confirmation Modal (Hidden initially) -->
+    <div class="modal-backdrop" id="orderSuccessModal" style="display: none;">
+        <div class="modal-card">
+            <div class="success-icon-badge">✅</div>
+            <h2>Payment Successful!</h2>
+            <p>Your enrollment is confirmed. Order ID: <strong id="confirmedOrderId">#EP-98231</strong></p>
+            <p class="text-muted">A confirmation receipt has been sent to your registered email.</p>
+            
+            <div class="modal-actions">
+                <a href="dashboard.html" class="btn btn-primary btn-block">Go to My Courses</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 EduPulse LMS. Built for learning.</p>
+            <div class="footer-links">
+                <a href="courses.html">Courses</a>
+                <a href="language.html">Language Settings</a>
+                <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Script -->
+    <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - EduPulse</title>
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="cart">
+
+    <!-- Global Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-accent">Edu</span>Pulse
+            </a>
+
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="language.html" class="nav-link">Language</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-btn active" aria-label="Shopping Cart">
+                    🛒 <span class="cart-badge" id="navCartCount">0</span>
+                </a>
+                <div class="auth-buttons" id="navAuth">
+                    <a href="login.html" class="btn btn-outline">Log In</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="cart-wrapper">
+        <div class="container">
+            <div class="page-title-group">
+                <h1>Shopping Cart</h1>
+                <p id="cartItemsCountText">Review your selected courses before checkout</p>
+            </div>
+
+            <!-- Main Cart Layout Grid -->
+            <div class="cart-layout" id="cartLayout">
+                
+                <!-- Left Column: Course Items List -->
+                <section class="cart-items-section">
+                    <div class="cart-items-container" id="cartItemsContainer">
+                        <!-- Populated dynamically by app.js from localStorage -->
+                    </div>
+
+                    <!-- Cart Actions Bar -->
+                    <div class="cart-actions-bar" id="cartActionsBar">
+                        <a href="courses.html" class="btn btn-outline">&larr; Continue Browsing</a>
+                        <button class="btn btn-secondary" id="clearCartBtn">Clear Cart</button>
+                    </div>
+                </section>
+
+                <!-- Right Column: Summary & Coupon Box -->
+                <aside class="cart-summary-sidebar" id="cartSummarySidebar">
+                    
+                    <!-- Coupon Application Card -->
+                    <div class="summary-card coupon-box">
+                        <h4>Have a Coupon?</h4>
+                        <div class="coupon-input-group">
+                            <input type="text" id="couponCodeInput" class="form-control" placeholder="Try 'LEARN20'">
+                            <button class="btn btn-outline" id="applyCouponBtn">Apply</button>
+                        </div>
+                        <p class="coupon-status-msg" id="couponStatusMsg"></p>
+                    </div>
+
+                    <!-- Total Price Calculation Card -->
+                    <div class="summary-card">
+                        <h3>Order Summary</h3>
+                        
+                        <div class="summary-line">
+                            <span>Original Price</span>
+                            <span id="cartSubtotal">$0.00</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Discount</span>
+                            <span class="discount-text" id="cartDiscount">-$0.00</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Estimated Tax</span>
+                            <span id="cartTax">$0.00</span>
+                        </div>
+
+                        <hr class="summary-divider">
+
+                        <div class="summary-line total-line">
+                            <strong>Total</strong>
+                            <strong class="total-price" id="cartGrandTotal">$0.00</strong>
+                        </div>
+
+                        <a href="checkout.html" class="btn btn-primary btn-block btn-lg" id="proceedCheckoutBtn">
+                            Proceed to Checkout &rarr;
+                        </a>
+
+                        <p class="security-guarantee text-center">30-Day Money-Back Guarantee</p>
+                    </div>
+                </aside>
+
+            </div>
+
+            <!-- Empty Cart Fallback State (Hidden by default, shown if cart array is empty) -->
+            <div class="empty-state-card" id="emptyCartState" style="display: none;">
+                <div class="empty-state-icon">🛒</div>
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added any courses to your cart yet.</p>
+                <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 EduPulse LMS. Built for learning.</p>
+            <div class="footer-links">
+                <a href="courses.html">Courses</a>
+                <a href="language.html">Language Settings</a>
+                <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Script -->
+    <script src="../js/app.js"></script>
+</body>
+</html>

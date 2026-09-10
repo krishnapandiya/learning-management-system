@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Settings - EduPulse</title>
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="language">
+
+    <!-- Global Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-accent">Edu</span>Pulse
+            </a>
+
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="language.html" class="nav-link active">Language</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-btn" aria-label="Shopping Cart">
+                    🛒 <span class="cart-badge" id="navCartCount">0</span>
+                </a>
+                <div class="auth-buttons" id="navAuth">
+                    <a href="login.html" class="btn btn-outline">Log In</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="language-page-wrapper">
+        <div class="container container-sm">
+            
+            <div class="page-title-group text-center">
+                <h1>Language Preferences</h1>
+                <p>Choose your preferred interface language across EduPulse.</p>
+            </div>
+
+            <!-- Language Selector Card -->
+            <div class="card settings-card">
+                
+                <!-- Quick Search for Languages -->
+                <div class="form-group">
+                    <label for="langSearchInput">Search Language</label>
+                    <input type="text" id="langSearchInput" class="form-control" placeholder="Search by language or country...">
+                </div>
+
+                <!-- Language Selection Grid -->
+                <div class="language-options-grid" id="languageList">
+                    
+                    <!-- English -->
+                    <label class="lang-option-card selected">
+                        <input type="radio" name="siteLanguage" value="en" checked>
+                        <div class="lang-meta">
+                            <span class="lang-native">English</span>
+                            <span class="lang-sub">English (US / Global)</span>
+                        </div>
+                        <span class="lang-indicator">✓</span>
+                    </label>
+
+                    <!-- Spanish -->
+                    <label class="lang-option-card">
+                        <input type="radio" name="siteLanguage" value="es">
+                        <div class="lang-meta">
+                            <span class="lang-native">Español</span>
+                            <span class="lang-sub">Spanish</span>
+                        </div>
+                        <span class="lang-indicator">✓</span>
+                    </label>
+
+                    <!-- Hindi -->
+                    <label class="lang-option-card">
+                        <input type="radio" name="siteLanguage" value="hi">
+                        <div class="lang-meta">
+                            <span class="lang-native">हिन्दी</span>
+                            <span class="lang-sub">Hindi</span>
+                        </div>
+                        <span class="lang-indicator">✓</span>
+                    </label>
+
+                    <!-- French -->
+                    <label class="lang-option-card">
+                        <input type="radio" name="siteLanguage" value="fr">
+                        <div class="lang-meta">
+                            <span class="lang-native">Français</span>
+                            <span class="lang-sub">French</span>
+                        </div>
+                        <span class="lang-indicator">✓</span>
+                    </label>
+
+                    <!-- German -->
+                    <label class="lang-option-card">
+                        <input type="radio" name="siteLanguage" value="de">
+                        <div class="lang-meta">
+                            <span class="lang-native">Deutsch</span>
+                            <span class="lang-sub">German</span>
+                        </div>
+                        <span class="lang-indicator">✓</span>
+                    </label>
+
+                    <!-- Telugu -->
+                    <label class="lang-option-card">
+                        <input type="radio" name="siteLanguage" value="te">
+                        <div class="lang-meta">
+                            <span class="lang-native">తెలుగు</span>
+                            <span class="lang-sub">Telugu</span>
+                        </div>
+                        <span class="lang-indicator">✓</span>
+                    </label>
+
+                </div>
+
+                <!-- Live Interface Preview Box -->
+                <div class="preview-box">
+                    <span class="badge">Live Interface Preview</span>
+                    <h4 id="previewGreeting">Welcome to EduPulse</h4>
+                    <p id="previewText" class="text-muted">
+                        Explore hands-on courses in programming, design, and AI.
+                    </p>
+                </div>
+
+                <!-- Confirmation Alert Feedback -->
+                <div class="alert alert-success" id="languageSaveNotice" style="display: none;">
+                    ✓ Language preferences saved! The interface has been updated.
+                </div>
+
+                <div class="settings-actions">
+                    <button class="btn btn-primary btn-block btn-lg" id="saveLanguageBtn">Apply & Save Preferences</button>
+                    <a href="../index.html" class="btn btn-outline btn-block">Back to Home</a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 EduPulse LMS. Built for learning.</p>
+            <div class="footer-links">
+                <a href="courses.html">Courses</a>
+                <a href="language.html">Language Settings</a>
+                <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Script -->
+    <script src="../js/app.js"></script>
+</body>
+</html>
